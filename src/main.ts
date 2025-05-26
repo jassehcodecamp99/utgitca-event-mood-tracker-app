@@ -19,7 +19,7 @@ const moodLoggerBtnEl = document.querySelector(".btn-log") as HTMLElement;
 
 moodLoggerBtnEl.addEventListener("click", () => {
   const moodLoggerFormEl = document.querySelector(".mood-popup");
-  moodLoggerFormEl.classList.toggle("hidden");
+  moodLoggerFormEl?.classList.toggle("hidden");
 });
 
 // get mood entries from json file
