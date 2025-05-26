@@ -1,0 +1,16 @@
+[
+  { "date": "March 31", "hours": 6, "mood": "" },
+  { "date": "April 02", "hours": 8, "mood": "" },
+  { "date": "April 04", "hours": 3, "mood": "" },
+  { "date": "April 07", "hours": 2, "mood": "" },
+  { "date": "April 09", "hours": 9, "mood": "" },
+  { "date": "April 10", "hours": 4, "mood": "" },
+  { "date": "April 12", "hours": 5, "mood": "" },
+  { "date": "April 13", "hours": 8, "mood": "" },
+  { "date": "April 14", "hours": 1, "mood": "" },
+  {
+    "date": "April 15",
+    "hours": 9,
+    "mood": ""
+  }
+]
