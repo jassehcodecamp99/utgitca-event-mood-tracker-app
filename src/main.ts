@@ -15,13 +15,6 @@ export const Home = () => {
 };
 Home();
 
-const moodLoggerBtnEl = document.querySelector(".btn-log") as HTMLElement;
-
-moodLoggerBtnEl.addEventListener("click", () => {
-  const moodLoggerFormEl = document.querySelector(".mood-popup");
-  moodLoggerFormEl?.classList.toggle("hidden");
-});
-
 // get mood entries from json file
 interface SleepEntry {
   date: string;
@@ -81,20 +74,44 @@ fetch("/data.json")
     });
   });
 
-//error message
-const myMood = document.getElementById("mood-form") as HTMLDivElement;
-myMood.addEventListener("submit", function (e) {
-  e.preventDefault();
+//mood form open
+const moodFormOpen = document.querySelector(
+  ".btn-mood-open"
+) as HTMLButtonElement;
+
+moodFormOpen.addEventListener("click", () => {
+  const moodLoggerFormEl = document.querySelector(
+    ".mood-popup"
+  ) as HTMLDivElement;
+  moodLoggerFormEl?.classList.remove("hidden");
+});
+//mood form close
+const moodFormClose = document.querySelector(".btn-mood-close") as HTMLElement;
+
+moodFormClose.addEventListener("click", () => {
+  const moodLoggerFormEl = document.querySelector(
+    ".mood-popup"
+  ) as HTMLDivElement;
+  moodLoggerFormEl?.classList.add("hidden");
+});
+
+//mood continue button
+const continueButton = document.querySelector(
+  ".btn-continue"
+) as HTMLButtonElement;
+
+continueButton.addEventListener("click", () => {
   const selected = document.querySelector('input[name="mood"]:checked');
-  const errorMessage = document.getElementById(
-    "errorMessage"
+  const errorMessage = document.querySelector(
+    ".errorMessage"
   ) as HTMLParagraphElement;
 
   if (!selected) {
     errorMessage.classList.remove("hidden");
+    alert("mood not selected");
   } else {
     errorMessage.classList.add("hidden");
-
-    // You can now POST this value to a backend or store it
+    alert("mood selected");
+    //send the selsted mood to the backend
   }
 });
