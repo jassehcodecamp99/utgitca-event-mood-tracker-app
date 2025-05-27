@@ -16,10 +16,19 @@ export const Home = () => {
 Home();
 
 const moodLoggerBtnEl = document.querySelector(".btn-log") as HTMLElement;
+const loggerCloseBtnEL = document.querySelector(
+  "#logger-close-button"
+) as HTMLButtonElement;
+
+const moodLoggerFormEl = document.querySelector(".mood-popup");
+moodLoggerFormEl?.classList.add("hidden");
 
 moodLoggerBtnEl.addEventListener("click", () => {
-  const moodLoggerFormEl = document.querySelector(".mood-popup");
-  moodLoggerFormEl?.classList.toggle("hidden");
+  moodLoggerFormEl?.classList.remove("hidden");
+});
+
+loggerCloseBtnEL.addEventListener("click", () => {
+  moodLoggerFormEl?.classList.add("hidden");
 });
 
 // get mood entries from json file
