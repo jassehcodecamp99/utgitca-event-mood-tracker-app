@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood tracker v2</title>
+    <link rel="stylesheet" href="/src/app.css" />
+  </head>
+
+  <body class="md:container md:m-auto md:p-12 p-6 bg-[#f6f7fb]">
+    <header>
+      <div class="flex justify-between relative">
+        <div>
+          <div class="w-[80%]">
+            <img src="/assets/images/logo.svg" alt="logo" />
+          </div>
+        </div>
+
+        <div class="">
+          <div
+            id="menu-content"
+            class="mt-[3rem] absolute left-[0] md:left-[58rem] bg-white p-4 md:w-[20%] w-[100%] rounded-2xl shadow-lg menu-content transition-all transition-discrete"
+          >
+            <div>
+              <h3 class="text-2xl">Lisa Maria</h3>
+              <p class="mt-[2px] text-[1rem] text-gray-400">lisa@gmail.com</p>
+            </div>
+            <div class="border-b-2 pt-[1rem] border-gray-200"></div>
+            <div class="mt-[1rem] text-[18px]">
+              <div class="flex gap-2">
+                <img
+                  src="./starter-code (1)/assets/images/icon-settings.svg"
+                  alt=""
+                />
+                <h3>Settings</h3>
+              </div>
+              <div class="flex gap-2">
+                <img
+                  src="./starter-code (1)/assets/images/icon-logout.svg"
+                  alt="Logout icon"
+                />
+                <h3>Logout</h3>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-2 cursor-pointer items-center">
+            <img
+              width="40"
+              src="/starter-code (1)/assets/images/avatar-placeholder.svg"
+              alt=""
+            />
+
+            <div id="menu-icon">
+              <img src="assets/images/icon-dropdown-arrow.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="mt-[4rem] text-center">
+          <h2 class="text-blue-600 text-2xl">Hello, Lisa!</h2>
+          <h1 class="text-[3rem]">How are you feeling today?</h1>
+          <p class="text-gray-500">Wednesday, April 16th, 2025</p>
+        </div>
+      </div>
+    </header>
+    <main class="mt-12">
+      <section class="md:flex md:gap-[2rem] h-[]">
+        <div
+          class="bg-white md:h-[16.5rem] md:pl-[2rem] md:pr-[2rem] pt-[1.5rem] pb-[1rem] overflow-hidden rounded-2xl border-gray-200 md:w-[100%]"
+        >
+          <div class="md:flex md:gap-[5rem] text-center">
+            <div class="">
+              <span class="text-2xl text-gray-500">I'm feeling </span>
+              <h3 class="text-[2rem] -mt-[10px]">very Happy</h3>
+            </div>
+            <div class="mt-[] flex justify-center md:justify-start">
+              <img
+                width="260"
+                src="/assets/images/icon-very-happy-color.svg"
+                alt="very happy icon"
+              />
+              <!-- <div
+                class="w-[500px] h-[500px] bg-no-repeat bg-[url('/assets/images/icon-very-happy-color.svg')]"
+              ></div> -->
+            </div>
+          </div>
+          <div class="md:-mt-[6.5rem] mt-[1rem] text-center md:text-start">
+            <div class="flex justify-center md:justify-start">
+              <img src="/assets/images/icon-quote.svg" alt="" />
+            </div>
+            <div class="">
+              When your heart is full, share <br />your light with the world
+            </div>
+          </div>
+        </div>
+
+        <div class="md:w-[100%] space-y-4">
+          <div class="bg-white p-[1rem] h-[6rem] rounded-2xl mt-[3rem] md:mt-0">
+            <div class="flex gap-3 text-gray-500">
+              <img src="/assets/images/icon-sleep.svg" alt="" />
+              <span>Sleep</span>
+            </div>
+            <h3 class="text-2xl">9+ hours</h3>
+          </div>
+
+          <div class="bg-white p-[1rem] h-[] rounded-2xl">
+            <div class="flex gap-3">
+              <img src="/assets/images/icon-reflection.svg" alt="" />
+              <span class="text-gray-500">Reflection of the day</span>
+            </div>
+            <div>
+              <p class="">Woke up early and finally tackled a big project!</p>
+              <div>
+                <p class="mt-[3rem] text-gray-500">#Grateful #Optimistic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="md:flex md:gap-7">
+          <div class="bg-white md:w-[60%] p-6 mt-[2rem] rounded-2xl">
+            <div>
+              <div class="flex gap-1">
+                <p>Average Mood</p>
+                <span class="text-gray-500">(Last 5 check-ins)</span>
+              </div>
+              <div class="bg-blue-300 p-6 p mt-2 rounded-2xl h-[11rem]">
+                <div class="mt-3">
+                  <div class="flex items-center gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-neutral-white.svg"
+                      alt=""
+                    />
+                    <p class="text-2xl">Neutral</p>
+                  </div>
+                  <div class="mt-2">
+                    <img src="/assets/images/icon" alt="" />
+                    <p>Same as the previous 5 check-ins</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-[2rem]">
+              <div class="flex gap-1">
+                <p>Average Mood</p>
+                <span class="text-gray-500">(Last 5 check-ins)</span>
+              </div>
+              <div
+                class="bg-blue-500 p-6 p mt-2 rounded-2xl text-white h-[11rem] bg-[url('./a')"
+              >
+                <div class="mt-3">
+                  <div class="flex items-center gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p class="text-2xl">5-6 Hours</p>
+                  </div>
+                  <div class="mt-2">
+                    <img src="/assets/images/icon" alt="" />
+                    <p>Increase from the previouse 5 check-ins</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-[2rem] w-[100%] h-[100%] ml-[] bg-white p-6 rounded-2xl"
+          >
+            <div>
+              <h1 class="text-2xl pt-[]">Mood and slepp trends</h1>
+            </div>
+            <div class="grid grid-cols-2 -gap-x-[2rem] items-center md:w-[40%]">
+              <div class="-mt-[3rem] text-gray-500">
+                <div class="space-y-[2.5rem]">
+                  <div class="flex gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p class="">9+ hours</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p>7-8 hours</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p>5-6 hours</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p>3-4 hours</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <img
+                      width="20"
+                      src="/assets/images/icon-sleep.svg"
+                      alt=""
+                    />
+                    <p>0-2 hours</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="text-center pt-[10rem] w-[90%] overflow-auto md:overflow-visible"
+              >
+                <div class="flex gap-4">
+                  <div class="">
+                    <div
+                      class="bg-indigo-300 p-2 min-h-[13rem] rounded-full flex col-auto"
+                    >
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>March</p>
+                    <h3>31</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-green-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>02</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-red-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>04</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-blue-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>06</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-green-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>07</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-yellow-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>09</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-indigo-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>10</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-blue-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>12</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-green-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>13</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-red-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>14</h3>
+                  </div>
+
+                  <div class="">
+                    <div class="bg-yellow-300 p-2 h-[13rem] rounded-full">
+                      <img
+                        src="/assets/images/icon-very-sad-white.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>April</p>
+                    <h3>14</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/dashboard.ts"></script>
+  </body>
+</html>

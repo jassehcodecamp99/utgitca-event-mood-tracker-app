@@ -2,3 +2,6 @@
 .menu-content {
   display: none;
 }
+.over-flow {
+  overflow-x: auto;
+}

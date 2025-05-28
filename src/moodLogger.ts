@@ -63,7 +63,7 @@ fetch("/data.json")
       }
 
       const bar = document.createElement("div");
-      bar.className = `flex flex-col items-center text-center overflow-x-auto `;
+      bar.className = `flex flex-col items-center text-center over-flow `;
       bar.innerHTML = `
         <div class="${color} w-8 rounded-t-full flex items-center justify-center text-2xl text-white">
           ${entry.mood}
@@ -81,9 +81,11 @@ const moodFormOpen = document.querySelector(
 
 moodFormOpen.addEventListener("click", () => {
   const moodLoggerFormEl = document.querySelector(
-    ".mood-popup"
+    ".mood-popup "
   ) as HTMLDivElement;
   moodLoggerFormEl?.classList.remove("hidden");
+  const moodForm = document.querySelector(".mood-form") as HTMLFormElement;
+  moodForm?.classList.remove("hidden");
 });
 //mood form close
 const moodFormClose = document.querySelector(".btn-mood-close") as HTMLElement;
@@ -95,23 +97,48 @@ moodFormClose.addEventListener("click", () => {
   moodLoggerFormEl?.classList.add("hidden");
 });
 
-//mood continue button
-const continueButton = document.querySelector(
-  ".btn-continue"
-) as HTMLButtonElement;
+// feeling form open
+let currentStep: number = 1;
 
-continueButton.addEventListener("click", () => {
-  const selected = document.querySelector('input[name="mood"]:checked');
-  const errorMessage = document.querySelector(
-    ".errorMessage"
-  ) as HTMLParagraphElement;
+function showStep(step: number) {
+  const allSteps = document.querySelectorAll(".step");
+  allSteps.forEach((el, index) => {
+    (el as HTMLElement).classList.toggle("hidden", index !== step - 1);
+  });
+
+  // Progress bar update
+  for (let i = 1; i <= 2; i++) {
+    const bar = document.getElementById(`step-${i}-bar`);
+    if (bar) {
+      bar.style.backgroundColor = i <= step ? "#3b82f6" : "#e5e7eb";
+    }
+  }
+}
+// Step 1 validation
+const moodSubmit = document.querySelector(".btn-mood-continue") as HTMLElement;
+
+moodSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+  const selected = document.querySelector(
+    'input[name="mood"]:checked'
+  ) as HTMLInputElement;
+  const errorMsg = document.getElementById("errorStep1");
 
   if (!selected) {
-    errorMessage.classList.remove("hidden");
-    alert("mood not selected");
+    errorMsg?.classList.remove("hidden");
   } else {
-    errorMessage.classList.add("hidden");
-    alert("mood selected");
-    //send the selsted mood to the backend
+    errorMsg?.classList.add("hidden");
+    currentStep++;
+    showStep(currentStep);
+    const moodLoggerFormEl = document.querySelector(
+      ".mood-popup "
+    ) as HTMLDivElement;
+    moodLoggerFormEl?.classList.remove("hidden");
+    const moodForm = document.querySelector(".mood-form") as HTMLFormElement;
+    moodForm?.classList.add("hidden");
+    const feelingForm = document.querySelector(
+      ".feeling-form"
+    ) as HTMLFormElement;
+    feelingForm?.classList.remove("hidden");
   }
 });
